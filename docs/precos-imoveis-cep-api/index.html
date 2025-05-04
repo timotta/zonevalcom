@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Imóveis por CEP - Valorize suas Aplicações</title>
+    <title>API de preço médio de imóveis por CEP</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
                 <!-- Placeholder for Logo Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
-                <span>API Imóveis CEP</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="logo-icon">
+                    <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+                    <path d="M9 22v-4h6v4" />
+                    <path d="M8 6h.01" />
+                    <path d="M16 6h.01" />
+                    <path d="M12 6h.01" />
+                    <path d="M12 10h.01" />
+                    <path d="M12 14h.01" />
+                    <path d="M16 10h.01" />
+                    <path d="M16 14h.01" />
+                    <path d="M8 10h.01" />
+                    <path d="M8 14h.01" />
+                </svg>
+                <span>API PMI CEP</span>
             </a>
             <nav class="nav">
-                <a href="#features">Funcionalidades</a>
+                <a href="#casosdeuso">Casos de uso</a>
+                <a href="#caracteristicas">Características</a>
+                <a href="#exemplo">Exemplo</a>
                 <a href="docs.html">Documentação</a>
                 <a href="#pricing">Preços</a>
                 <a href="#contact">Contato</a>
@@ -30,8 +48,9 @@
     <main>
         <section class="hero">
             <div class="container hero-container">
-                <h1>API de Valor de Imóveis por CEP</h1>
-                <p>Acesse dados precisos sobre valor médio e valor por metro quadrado de imóveis em todo o Brasil, utilizando apenas o CEP. Potencialize suas aplicações com inteligência imobiliária.</p>
+                <h1>API de preço médio de imóveis por CEP</h1>
+                <p>Acesse dados precisos sobre valor médio e valor por metro quadrado de imóveis em todo o Brasil,
+                    utilizando apenas o CEP. Potencialize suas aplicações com inteligência imobiliária.</p>
                 <div class="hero-buttons">
                     <a href="#pricing" class="btn btn-primary">Ver Preços</a>
                     <a href="docs.html" class="btn btn-secondary">Ler Documentação</a>
@@ -39,18 +58,20 @@
             </div>
         </section>
 
-        <section id="features" class="features">
+        <section id="casosdeuso" class="features">
             <div class="container">
                 <div class="section-header">
-                    <span class="tag">Funcionalidades Principais</span>
-                    <h2>Por que usar nossa API?</h2>
-                    <p>Nossa API fornece dados imobiliários atualizados e confiáveis para diversas aplicações, ajudando seu negócio a tomar decisões mais inteligentes.</p>
+                    <span class="tag">Casos de uso</span>
+                    <h2>Onde e quando usar?</h2>
+                    <p>Nossa API ajuda seu negócio a tomar decisões mais inteligentes com base no CEP cadastrado pelo
+                        seu cliente.</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature-card">
                         <!-- Placeholder for Icon -->
                         <h3>Segmentação Precisa</h3>
-                        <p>Segmente seu público para campanhas publicitárias com base no perfil imobiliário da região do CEP.</p>
+                        <p>Segmente seu público para campanhas publicitárias com base no perfil imobiliário da região do
+                            CEP.</p>
                     </div>
                     <div class="feature-card">
                         <!-- Placeholder for Icon -->
@@ -60,24 +81,133 @@
                     <div class="feature-card">
                         <!-- Placeholder for Icon -->
                         <h3>Prevenção à Fraude</h3>
-                        <p>Utilize o valor do imóvel como um fator adicional na análise de risco e prevenção a fraudes.</p>
+                        <p>Utilize o valor do imóvel como um fator adicional na análise de risco e prevenção a fraudes.
+                        </p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="caracteristicas" class="features features-gray">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">Características</span>
+                    <h2>Simplicidade e abrangência</h2>
+                    <p>Nossa API fornece dados imobiliários atualizados e confiáveis para diversas aplicações.</p>
+                </div>
+                <div class="features-grid">
                     <div class="feature-card">
                         <!-- Placeholder for Icon -->
                         <h3>Dados Abrangentes</h3>
-                        <p>Cobertura nacional, fornecendo valor médio e valor por metro quadrado para CEPs em todo o Brasil.</p>
+                        <p>Cobertura nacional, fornecendo valor médio e mediano e valor por metro quadrado e por quarto para CEPs em todo o
+                            Brasil.</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Fallbacks inteligentes</h3>
+                        <p>Agregação de bairro, cidade e estado do CEP buscado, ajudando a tratar casos sem imóveis a venda no CEP</p>
                     </div>
                     <div class="feature-card">
                         <!-- Placeholder for Icon -->
                         <h3>Fácil Integração</h3>
-                        <p>API RESTful simples e bem documentada para integração rápida.</p>
-                    </div>
-                    <div class="feature-card">
-                        <!-- Placeholder for Icon -->
-                        <h3>Custo Efetivo</h3>
-                        <p>Modelo de precificação flexível baseado no consumo (pay-per-request).</p>
+                        <p>API RESTful simples, intuítica e bem documentada para integração rápida em todas linguagens de programação.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+
+        <section id="exemplo" class="example">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">Exemplo</span>
+                    <h2>Exemplo de uso da API</h2>
+                </div>
+                <section class="api-section">
+                    <div class="block">
+                        <h2>Requisição cURL</h2>
+                        <pre>
+curl http://rsp.api.timotta.com/zipcodes/05409011/stats
+    --header 'x-api-key: rsp-key-...' \
+    --header 'x-api-secret: rsp-secret-...'
+                        </pre>
+                    </div>
+                    <div class="block">
+                        <h2>Resposta JSON</h2>
+                        <pre>
+{
+    "by_zipcode": {
+        "global": {
+            "average": 1356516.75,
+            "median": 1279970.0,
+            "support": 500
+        },
+        "per_m2": {
+            "average": 16720.134765625,
+            "median": 15855.76953125,
+            "support": 499
+        },
+        "per_room": {
+            "average": 689286.9375,
+            "median": 549666.6875,
+            "support": 500
+        }
+    },
+    "by_neighbourhood": {
+        "global": {
+            "average": 1901228.0,
+            "median": 1350000.0,
+            "support": 30002
+        },
+        "per_m2": {
+            "average": 17830.412109375,
+            "median": 17543.859375,
+            "support": 29978
+        },
+        "per_room": {
+            "average": 873248.25,
+            "median": 680000.0,
+            "support": 30002
+        }
+    },
+    "by_city": {
+        "global": {
+            "average": 1799876.875,
+            "median": 955000.0,
+            "support": 1220210
+        },
+        "per_m2": {
+            "average": 5085.2685546875,
+            "median": 9624.0859375,
+            "support": 1217170
+        },
+        "per_room": {
+            "average": 680054.9375,
+            "median": 416666.65625,
+            "support": 1220210
+        }
+    },
+    "by_uf": {
+        "global": {
+            "average": 1494168.5,
+            "median": 793500.0,
+            "support": 2737457
+        },
+        "per_m2": {
+            "average": 1737.783203125,
+            "median": 7064.51611328125,
+            "support": 2730922
+        },
+        "per_room": {
+            "average": 545531.8125,
+            "median": 318000.0,
+            "support": 2737457
+        }
+    }
+}
+                        </pre>
+                    </div>
+                </section>
             </div>
         </section>
 
@@ -86,41 +216,47 @@
                 <div class="section-header">
                     <span class="tag">Planos e Preços</span>
                     <h2>Escolha o plano ideal para você</h2>
-                    <p>Planos flexíveis que se adaptam às suas necessidades, desde testes iniciais até aplicações de larga escala. Comece gratuitamente.</p>
+                    <p>Planos flexíveis que se adaptam às suas necessidades, desde testes iniciais até aplicações de
+                        larga escala. Comece gratuitamente.</p>
                 </div>
                 <table class="pricing-table">
                     <thead>
                         <tr>
-                            <th>Limite de Requisições (por minuto)</th>
+                            <th class="rate-limit-col-title">Limite de Requisições por minuto</th>
                             <th>Preço por Requisição</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="rate-limit-col">Até 100 RPM</td>
-                            <td class="price-col">R$ 0,020</td>
+                            <td class="rate-limit-col">Até 6 RPM</td>
+                            <td class="price-col">R$ 0,0005</td>
                         </tr>
                         <tr>
-                            <td class="rate-limit-col">Até 500 RPM</td>
-                            <td class="price-col">R$ 0,015</td>
+                            <td class="rate-limit-col">Até 30 RPM</td>
+                            <td class="price-col">R$ 0,0052</td>
                         </tr>
                         <tr>
-                            <td class="rate-limit-col">Até 1.000 RPM</td>
-                            <td class="price-col">R$ 0,010</td>
+                            <td class="rate-limit-col">Até 120 RPM</td>
+                            <td class="price-col">R$ 0,0123</td>
                         </tr>
                         <tr>
-                            <td class="rate-limit-col">Até 5.000 RPM</td>
-                            <td class="price-col">R$ 0,007</td>
+                            <td class="rate-limit-col">Até 1200 RPM</td>
+                            <td class="price-col">R$ 0,0182</td>
                         </tr>
                         <tr>
-                            <td class="rate-limit-col">Acima de 5.000 RPM</td>
+                            <td class="rate-limit-col">Até 6000 RPM</td>
+                            <td class="price-col">R$ 0,0256</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Acima de 6000 RPM</td>
                             <td class="price-col">Sob consulta</td>
                         </tr>
                     </tbody>
                     <tfoot>
-                       <tr class="notes-row">
-                            <td colspan="2">Planos com limites maiores, SLA dedicado e suporte premium disponíveis. <a href="#contact">Entre em contato</a> para uma cotação personalizada.</td>
-                       </tr>
+                        <tr class="notes-row">
+                            <td colspan="2">Planos com limites maiores, SLA dedicado e suporte premium disponíveis. <a
+                                    href="#contact">Entre em contato</a> para uma cotação personalizada.</td>
+                        </tr>
                     </tfoot>
                 </table>
             </div>
@@ -169,4 +305,5 @@
 
     <script src="js/script.js"></script> <!-- Optional: for mobile nav toggle -->
 </body>
+
 </html>
