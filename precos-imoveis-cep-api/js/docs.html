@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação - API Imóveis por CEP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <!-- Basic syntax highlighting CSS (e.g., Prism.js theme) could be added here -->
+    <style>
+        /* Additional styles specific to docs page */
+        .docs-container {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .docs-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .docs-section:last-child {
+            border-bottom: none;
+        }
+        .docs-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #1a2b48;
+        }
+        .docs-section h3 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a2b48;
+        }
+        .docs-section h4 {
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .docs-section p, .docs-section li {
+            color: #445;
+            margin-bottom: 15px;
+        }
+        .docs-section ul {
+            padding-left: 20px;
+        }
+        pre {
+            background-color: #2d2d2d; /* Dark background for code */
+            color: #f8f8f2; /* Light text */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        code {
+            font-family: 'Source Code Pro', monospace;
+        }
+        .code-inline {
+             background-color: #eef1f3;
+             padding: 2px 5px;
+             border-radius: 3px;
+             font-size: 0.9em;
+        }
+        .http-method {
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .get {
+            background-color: #e6f7ec; /* Light green */
+            color: #0b8744; /* Dark green */
+        }
+        .endpoint-path {
+            font-family: 'Source Code Pro', monospace;
+            background-color: #f0f4f8;
+            padding: 10px;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .param-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .param-table th, .param-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .param-table th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                <span>API Imóveis CEP - Docs</span>
+            </a>
+            <nav class="nav">
+                <a href="index.html#features">Funcionalidades</a>
+                <a href="docs.html">Documentação</a>
+                <a href="index.html#pricing">Preços</a>
+                <a href="index.html#contact">Contato</a>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+    </header>
+
+    <main class="container docs-container">
+        <h1>Documentação da API</h1>
+
+        <section id="introducao" class="docs-section">
+            <h2>Introdução</h2>
+            <p>Bem-vindo à documentação da API de Valor de Imóveis por CEP. Nossa API RESTful permite que você acesse facilmente dados atualizados sobre o valor médio e o valor por metro quadrado de propriedades residenciais e comerciais em todo o Brasil, utilizando apenas o CEP como parâmetro de busca.</p>
+            <p>Esta API foi projetada para ser simples, rápida e fácil de integrar em suas aplicações, seja para segmentação de público, enriquecimento de modelos de recomendação, análise de risco, prevenção à fraude ou outras finalidades que demandem inteligência imobiliária geolocalizada.</p>
+        </section>
+
+        <section id="autenticacao" class="docs-section">
+            <h2>Autenticação</h2>
+            <p>Todas as requisições à API devem ser autenticadas usando uma chave de API (API Key). Você pode obter sua chave de API após se inscrever em um de nossos planos.</p>
+            <p>Inclua sua chave de API no cabeçalho <code class="code-inline">Authorization</code> de cada requisição, utilizando o esquema <code class="code-inline">Bearer</code>:</p>
+            <pre><code>Authorization: Bearer SUA_API_KEY</code></pre>
+            <p>Requisições sem autenticação ou com uma chave inválida retornarão um erro <code class="code-inline">401 Unauthorized</code>.</p>
+        </section>
+
+        <section id="endpoint" class="docs-section">
+            <h2>Endpoint Principal</h2>
+            <p>O endpoint base para acessar os dados de valor imobiliário é:</p>
+            <pre><code>https://api.imoveis-cep.com/v1</code></pre>
+
+            <h3>Obter Valor por CEP</h3>
+            <p>Para consultar o valor médio e o valor por metro quadrado de um imóvel com base no CEP, utilize o método GET no seguinte endpoint:</p>
+            <div class="endpoint-path">
+                <span class="http-method get">GET</span> /valor
+            </div>
+
+            <h4>Parâmetros da Query:</h4>
+            <table class="param-table">
+                <thead>
+                    <tr>
+                        <th>Parâmetro</th>
+                        <th>Obrigatório</th>
+                        <th>Descrição</th>
+                        <th>Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-inline">cep</code></td>
+                        <td>Sim</td>
+                        <td>O Código de Endereçamento Postal (CEP) a ser consultado. Deve conter 8 dígitos, podendo ser informado com ou sem hífen.</td>
+                        <td><code class="code-inline">01001000</code> ou <code class="code-inline">01001-000</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="resposta" class="docs-section">
+            <h2>Formato da Resposta</h2>
+            <p>Requisições bem-sucedidas retornarão um status <code class="code-inline">200 OK</code> e um corpo de resposta em formato JSON contendo as seguintes informações:</p>
+
+            <h4>Estrutura da Resposta (Sucesso)</h4>
+            <ul>
+                <li><code class="code-inline">cep</code>: String - O CEP consultado (formatado, 8 dígitos sem hífen).</li>
+                <li><code class="code-inline">valor_medio</code>: Float - O valor médio estimado para imóveis nesse CEP (em Reais).</li>
+                <li><code class="code-inline">valor_m2</code>: Float - O valor médio estimado por metro quadrado para imóveis nesse CEP (em Reais).</li>
+                <li><code class="code-inline">data_atualizacao</code>: String - A data em que os dados para este CEP foram atualizados pela última vez (formato YYYY-MM-DD).</li>
+            </ul>
+
+            <h4>Exemplo de Resposta (Sucesso):</h4>
+            <pre><code>{
+  "cep": "01001000",
+  "valor_medio": 1250000.00,
+  "valor_m2": 15000.00,
+  "data_atualizacao": "2025-05-01"
+}</code></pre>
+        </section>
+
+        <section id="erros" class="docs-section">
+            <h2>Tratamento de Erros</h2>
+            <p>A API utiliza códigos de status HTTP padrão para indicar o sucesso ou falha de uma requisição. Em caso de erro, o corpo da resposta conterá um objeto JSON com detalhes:</p>
+
+            <h4>Estrutura da Resposta (Erro)</h4>
+            <ul>
+                <li><code class="code-inline">error</code>: String - Uma descrição legível do erro ocorrido.</li>
+                <li><code class="code-inline">code</code>: String - Um código único identificando o tipo de erro (útil para tratamento programático).</li>
+            </ul>
+
+            <h4>Exemplo de Resposta (Erro):</h4>
+            <pre><code>{
+  "error": "CEP inválido ou não encontrado",
+  "code": "CEP_NAO_ENCONTRADO"
+}</code></pre>
+
+            <h4>Códigos de Status Comuns:</h4>
+            <ul>
+                <li><code class="code-inline">200 OK</code>: Requisição bem-sucedida.</li>
+                <li><code class="code-inline">400 Bad Request</code>: Parâmetros inválidos (ex: CEP mal formatado). Código: <code class="code-inline">PARAMETRO_INVALIDO</code>.</li>
+                <li><code class="code-inline">401 Unauthorized</code>: Chave de API inválida ou ausente. Código: <code class="code-inline">NAO_AUTORIZADO</code>.</li>
+                <li><code class="code-inline">404 Not Found</code>: CEP não encontrado na base de dados. Código: <code class="code-inline">CEP_NAO_ENCONTRADO</code>.</li>
+                <li><code class="code-inline">429 Too Many Requests</code>: Limite de requisições excedido. Código: <code class="code-inline">LIMITE_EXCEDIDO</code>.</li>
+                <li><code class="code-inline">500 Internal Server Error</code>: Erro inesperado no servidor. Código: <code class="code-inline">ERRO_INTERNO</code>.</li>
+            </ul>
+        </section>
+
+        <section id="exemplos" class="docs-section">
+            <h2>Exemplos de Código</h2>
+            <p>Abaixo estão exemplos de como fazer uma requisição à API utilizando cURL e Python.</p>
+
+            <h3>cURL</h3>
+            <pre><code>curl -X GET 'https://api.imoveis-cep.com/v1/valor?cep=01001000' \
+     -H 'Authorization: Bearer SEU_API_KEY'</code></pre>
+
+            <h3>Python (com <code class="code-inline">requests</code>)</h3>
+            <pre><code>import requests
+
+api_key = "SEU_API_KEY"
+cep = "01001000"
+
+url = f"https://api.imoveis-cep.com/v1/valor?cep={cep}"
+headers = {
+    "Authorization": f"Bearer {api_key}"
+}
+
+try:
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()  # Raise an exception for bad status codes (4xx or 5xx)
+
+    data = response.json()
+    print(f"CEP: {data.get('cep')}")
+    print(f"Valor Médio: R$ {data.get('valor_medio'):,.2f}")
+    print(f"Valor por m²: R$ {data.get('valor_m2'):,.2f}")
+
+except requests.exceptions.RequestException as e:
+    print(f"Erro na requisição: {e}")
+except Exception as e:
+    print(f"Erro ao processar resposta: {e}")</code></pre>
+        </section>
+
+        <section id="limites" class="docs-section">
+            <h2>Limites de Uso</h2>
+            <p>O uso da API é cobrado por requisição, conforme o plano escolhido. Além disso, podem existir limites de taxa (rate limiting) para garantir a estabilidade do serviço para todos os usuários. Consulte a seção de <a href="index.html#pricing">Preços</a> para detalhes sobre os planos e limites.</p>
+            <p>Se você exceder o limite de taxa, receberá uma resposta <code class="code-inline">429 Too Many Requests</code>. Recomendamos implementar lógicas de backoff exponencial em suas integrações.</p>
+        </section>
+
+        <section id="suporte" class="docs-section">
+            <h2>Suporte</h2>
+            <p>Se encontrar problemas ou tiver dúvidas sobre a API, entre em contato conosco através da seção de <a href="index.html#contact">Contato</a>.</p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2025 API Imóveis por CEP. Todos os direitos reservados.</p>
+            <nav class="footer-nav">
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script> <!-- Optional: for mobile nav toggle -->
+</body>
+</html>

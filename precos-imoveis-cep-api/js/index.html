@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Imóveis por CEP - Valorize suas Aplicações</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <!-- Placeholder for Logo Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                <span>API Imóveis CEP</span>
+            </a>
+            <nav class="nav">
+                <a href="#features">Funcionalidades</a>
+                <a href="docs.html">Documentação</a>
+                <a href="#pricing">Preços</a>
+                <a href="#contact">Contato</a>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <h1>API de Valor de Imóveis por CEP</h1>
+                <p>Acesse dados precisos sobre valor médio e valor por metro quadrado de imóveis em todo o Brasil, utilizando apenas o CEP. Potencialize suas aplicações com inteligência imobiliária.</p>
+                <div class="hero-buttons">
+                    <a href="#pricing" class="btn btn-primary">Ver Preços</a>
+                    <a href="docs.html" class="btn btn-secondary">Ler Documentação</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">Funcionalidades Principais</span>
+                    <h2>Por que usar nossa API?</h2>
+                    <p>Nossa API fornece dados imobiliários atualizados e confiáveis para diversas aplicações, ajudando seu negócio a tomar decisões mais inteligentes.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Segmentação Precisa</h3>
+                        <p>Segmente seu público para campanhas publicitárias com base no perfil imobiliário da região do CEP.</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Modelos de Recomendação</h3>
+                        <p>Enriqueça seus modelos de recomendação com dados de valor imobiliário.</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Prevenção à Fraude</h3>
+                        <p>Utilize o valor do imóvel como um fator adicional na análise de risco e prevenção a fraudes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Dados Abrangentes</h3>
+                        <p>Cobertura nacional, fornecendo valor médio e valor por metro quadrado para CEPs em todo o Brasil.</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Fácil Integração</h3>
+                        <p>API RESTful simples e bem documentada para integração rápida.</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Custo Efetivo</h3>
+                        <p>Modelo de precificação flexível baseado no consumo (pay-per-request).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">Planos e Preços</span>
+                    <h2>Escolha o plano ideal para você</h2>
+                    <p>Planos flexíveis que se adaptam às suas necessidades, desde testes iniciais até aplicações de larga escala. Comece gratuitamente.</p>
+                </div>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Limite de Requisições (por minuto)</th>
+                            <th>Preço por Requisição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rate-limit-col">Até 100 RPM</td>
+                            <td class="price-col">R$ 0,020</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Até 500 RPM</td>
+                            <td class="price-col">R$ 0,015</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Até 1.000 RPM</td>
+                            <td class="price-col">R$ 0,010</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Até 5.000 RPM</td>
+                            <td class="price-col">R$ 0,007</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Acima de 5.000 RPM</td>
+                            <td class="price-col">Sob consulta</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                       <tr class="notes-row">
+                            <td colspan="2">Planos com limites maiores, SLA dedicado e suporte premium disponíveis. <a href="#contact">Entre em contato</a> para uma cotação personalizada.</td>
+                       </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Entre em Contato</h2>
+                    <p>Tem alguma dúvida ou precisa de um plano personalizado? Preencha o formulário abaixo.</p>
+                </div>
+                <form action="#" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto:</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2025 API Imóveis por CEP. Todos os direitos reservados.</p>
+            <nav class="footer-nav">
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script> <!-- Optional: for mobile nav toggle -->
+</body>
+</html>
