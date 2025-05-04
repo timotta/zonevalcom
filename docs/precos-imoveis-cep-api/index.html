@@ -124,17 +124,31 @@
                     <h2>Exemplo de uso da API</h2>
                 </div>
                 <section class="api-section">
-                    <div class="block">
-                        <h2>Requisição cURL</h2>
-                        <pre>
-curl http://pmicep.timotta.com/zipcodes/05409011/stats
+
+                    <div class="left-column">
+                        <form class="form" onsubmit="return executeExample()">
+                            <p>Selecione abaixo diferentes CEPs e verifique o resultado da API</p>
+                            <label for="cep">CEP a ser consultado:</label>
+                            <select name="cep" id="cep_input" onchange="return executeExample()">
+                                <option value="05409011">05409-011 - Com muitíssimos dados</option>
+                                <option value="22720011">22720-011 - Com muitos dados</option>
+                                <option value="13481008">13481-008 - Com poucos dados</option>
+                                <option value="94490340">94490-340 - Com nenhum dado</option>
+                            </select>
+                            <p>Caso tenha dúvidas sobre o que significado de cada campo retornado pela API,
+                                consulte nossa documentação.</p>
+                        </form>
+                        <div class="block">
+                            <h2>Requisição cURL</h2>
+                            <pre id="request_text">curl http://pmicep.timotta.com/zipcodes/05409011/stats
     --header 'x-api-key: rsp-key-...' \
     --header 'x-api-secret: rsp-secret-...'
-                        </pre>
+</pre>
+                        </div>
                     </div>
-                    <div class="block">
+                    <div class="block block-response">
                         <h2>Resposta JSON</h2>
-                        <pre>
+                        <pre id="response_text">
 {
     "by_zipcode": {
         "global": {
