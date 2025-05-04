@@ -561,15 +561,14 @@ img {
     background-color: #fff;
 }
 
-
 .api-section {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-  }
+}
 
-  .block {
+.block {
     background-color: #1e1e1e;
     color: #d4d4d4;
     padding: 1.5rem;
@@ -578,23 +577,135 @@ img {
     max-width: 500px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow-x: auto;
-  }
+}
 
-  .block h2 {
+.block h2 {
     font-size: 1.2rem;
     color: #61dafb;
     margin-bottom: 1rem;
-  }
+}
 
-  pre {
+pre {
     margin: 0;
     white-space: pre-wrap;
     word-break: break-word;
-  }
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .api-section {
-      flex-wrap: nowrap;
-      align-items: flex-start;
+    flex-wrap: nowrap;
+    align-items: flex-start;
     }
   }
+
+
+/* Additional styles specific to docs page */
+.docs-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.docs-section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.docs-section:last-child {
+    border-bottom: none;
+}
+
+.docs-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #1a2b48;
+}
+
+.docs-section h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #1a2b48;
+}
+
+.docs-section h4 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.docs-section p,
+.docs-section li {
+    color: #445;
+    margin-bottom: 15px;
+}
+
+.docs-section ul {
+    padding-left: 20px;
+}
+
+.docs-section pre {
+    background-color: #2d2d2d;
+    /* Dark background for code */
+    color: #f8f8f2;
+    /* Light text */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.docs-section code {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.code-inline {
+    background-color: #eef1f3;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.http-method {
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.get {
+    background-color: #e6f7ec;
+    /* Light green */
+    color: #0b8744;
+    /* Dark green */
+}
+
+.endpoint-path {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #f0f4f8;
+    padding: 10px;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.param-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.param-table th,
+.param-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.param-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}

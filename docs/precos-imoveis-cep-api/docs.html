@@ -10,125 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Code+Pro&display=swap"
         rel="stylesheet">
-    <!-- Basic syntax highlighting CSS (e.g., Prism.js theme) could be added here -->
-    <style>
-        /* Additional styles specific to docs page */
-        .docs-container {
-            padding-top: 30px;
-            padding-bottom: 30px;
-        }
-
-        .docs-section {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .docs-section:last-child {
-            border-bottom: none;
-        }
-
-        .docs-section h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #1a2b48;
-        }
-
-        .docs-section h3 {
-            font-size: 1.5em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #1a2b48;
-        }
-
-        .docs-section h4 {
-            font-size: 1.2em;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .docs-section p,
-        .docs-section li {
-            color: #445;
-            margin-bottom: 15px;
-        }
-
-        .docs-section ul {
-            padding-left: 20px;
-        }
-
-        pre {
-            background-color: #2d2d2d;
-            /* Dark background for code */
-            color: #f8f8f2;
-            /* Light text */
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-family: 'Source Code Pro', monospace;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-
-        code {
-            font-family: 'Source Code Pro', monospace;
-        }
-
-        .code-inline {
-            background-color: #eef1f3;
-            padding: 2px 5px;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-
-        .http-method {
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-right: 10px;
-        }
-
-        .get {
-            background-color: #e6f7ec;
-            /* Light green */
-            color: #0b8744;
-            /* Dark green */
-        }
-
-        .endpoint-path {
-            font-family: 'Source Code Pro', monospace;
-            background-color: #f0f4f8;
-            padding: 10px;
-            border-radius: 4px;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .param-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        .param-table th,
-        .param-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        .param-table th {
-            background-color: #f2f2f2;
-            font-weight: 600;
-        }
-    </style>
 </head>
 
 <body>
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
+            <a href="/precos-imoveis-cep-api/" class="logo">
                 <!-- Placeholder for Logo Icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -175,16 +62,16 @@
             <h2>Requisição</h2>
             <p>As requisições seguem o seguinte formato</p>
             <p>Inclua os seguintes headers em todas requisições:</p>
-            <pre><code>curl http://rsp.api.timotta.com/zipcodes/$CEP_BUSCADO/stats
+            <pre><code>curl http://pmicep.timotta.com/zipcodes/$CEP_BUSCADO/stats
                 --header 'x-api-key: $API_KEY' \
                 --header 'x-api-secret: $API_SECRET'</code></pre>
             <p>Exemplo:</p>
-            <pre><code>curl http://rsp.api.timotta.com/zipcodes/05409011/stats
+            <pre><code>curl http://pmicep.timotta.com/zipcodes/05409011/stats
                 --header 'x-api-key: rsp-key-f104e7f027a911f085d92b946cc40296' \
                 --header 'x-api-secret: rsp-secret-f8b6889627a911f08acb9f00a62cb4b4'</code></pre>
         </section>
 
-        <section id="request" class="docs-section">
+        <section id="params" class="docs-section">
             <h2>Parâmetros</h2>
             <table class="param-table">
                 <thead>
@@ -323,55 +210,57 @@
         }
     }
 }</code></pre>
-
-                <section id="status_code_403" class="docs-section">
-                    <h3>Status code 403</h3>
-
-                    <p>Em caso dos headers x-api-key ou x-api-secret não serem informados, ou estarem incorretos,
-                        ou seu plano não permitir a consulta do CEP específico a API
-                        retornará</p>
-
-                    <pre><code>{"message": "texto explicando o problema"}</code></pre>
-                </section>
-
-                <section id="status_code_404" class="docs-section">
-                    <h3>Status code 404</h3>
-
-                    <p>Quando o CEP consultado não existe em nossas bases de dados</p>
-
-                    <pre><code>{"message": "texto explicando o problema"}</code></pre>
-                </section>
-
-                <section id="status_code_429" class="docs-section">
-                    <h3>Status code 429</h3>
-
-                    <p>Seu limite de requisições por minuto foi alcançado. É importante que ao receber esse
-                        status code como resposta o cliente da API aplique alguma pausa, para evitar custos
-                        desncessários.
-                    </p>
-
-                    <pre><code>{"message": "texto explicando o problema"}</code></pre>
-                </section>
             </section>
 
-            <section id="limites" class="docs-section">
-                <h2>Registro de requisições</h2>
-                <p>O uso da API é cobrado por requisição, conforme o plano escolhido. Além disso, podem existir limites
-                    de requisições por minuto para garantir a estabilidade do serviço para todos os clientes. Consulte a
-                    seção de
-                    <a href="/precos-imoveis-cep-api/#pricing">Preços</a> para detalhes sobre os planos e limites.
+
+            <section id="status_code_403" class="docs-section">
+                <h3>Status code 403</h3>
+
+                <p>Em caso dos headers x-api-key ou x-api-secret não serem informados, ou estarem incorretos,
+                    ou seu plano não permitir a consulta do CEP específico a API
+                    retornará</p>
+
+                <pre><code>{"message": "texto explicando o problema"}</code></pre>
+            </section>
+
+            <section id="status_code_404" class="docs-section">
+                <h3>Status code 404</h3>
+
+                <p>Quando o CEP consultado não existe em nossas bases de dados</p>
+
+                <pre><code>{"message": "texto explicando o problema"}</code></pre>
+            </section>
+
+            <section id="status_code_429" class="docs-section">
+                <h3>Status code 429</h3>
+
+                <p>Seu limite de requisições por minuto foi alcançado. É importante que ao receber esse
+                    status code como resposta o cliente da API aplique alguma pausa, para evitar custos
+                    desncessários.
                 </p>
 
-                <p>Os status code de retorno que são contabilizam no seu limite de requisições por minuto e que são cobrados
-                    na sua conta são: 200, 404 e 429. Todos os demais status code não são cobrados.</p>
-
+                <pre><code>{"message": "texto explicando o problema"}</code></pre>
             </section>
+        </section>
 
-            <section id="suporte" class="docs-section">
-                <h2>Suporte</h2>
-                <p>Se encontrar problemas ou tiver dúvidas sobre a API, entre em contato conosco através da seção de <a
-                        href="/precos-imoveis-cep-api/#contact">Contato</a>.</p>
-            </section>
+        <section id="limites" class="docs-section">
+            <h2>Registro de requisições</h2>
+            <p>O uso da API é cobrado por requisição, conforme o plano escolhido. Além disso, podem existir limites
+                de requisições por minuto para garantir a estabilidade do serviço para todos os clientes. Consulte a
+                seção de
+                <a href="/precos-imoveis-cep-api/#pricing">Preços</a> para detalhes sobre os planos e limites.
+            </p>
+
+            <p>Os status code de retorno que são contabilizam no seu limite de requisições por minuto e que são cobrados
+                na sua conta são: 200, 404 e 429. Todos os demais status code não são cobrados.</p>
+
+        </section>
+
+        <section id="suporte" class="docs-section">
+            <h2>Suporte</h2>
+            <p>Se encontrar problemas ou tiver dúvidas sobre a API, entre em contato conosco através da seção de <a
+                    href="/precos-imoveis-cep-api/#contact">Contato</a>.</p>
+        </section>
 
     </main>
 
