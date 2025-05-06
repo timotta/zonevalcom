@@ -2,6 +2,8 @@
 const navToggle = document.querySelector('.mobile-nav-toggle');
 const nav = document.querySelector('.nav');
 
+const navLinks = document.querySelectorAll('.nav a');
+
 if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
         // Simple toggle: Add/remove a class to the nav to show/hide it.
@@ -16,7 +18,31 @@ if (navToggle && nav) {
             navToggle.innerHTML = '☰'; // Change back to hamburger
         }
     });
+
+    if (navLinks) {
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-visible');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.innerHTML = '☰';
+            });
+        });
+    }
 }
+
+function scrollToElementWithOffset(selector, offset = 88) {
+    const element = document.querySelector(selector);
+    if (element) {
+        const topPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+            top: topPosition - offset,
+            behavior: 'smooth'
+        });
+    } else {
+        console.warn('Elemento não encontrado:', selector);
+    }
+}
+
 
 var TEMPLATE = "curl https://pmicep.timotta.com/zipcodes/$ZIPCODE/stats\n" +
     "    --header 'x-api-key: rsp-key-...'\n" +
@@ -24,6 +50,8 @@ var TEMPLATE = "curl https://pmicep.timotta.com/zipcodes/$ZIPCODE/stats\n" +
 
 function executeExample() {
     var cep = document.querySelector("#cep_input").value;
+
+    scrollToElementWithOffset('.block-response');
 
     document.querySelector("#request_text").innerHTML = TEMPLATE.replace("$ZIPCODE", cep);
     document.querySelector("#response_text").innerHTML = "Carregando..."
@@ -42,6 +70,11 @@ function executeExample() {
             document.querySelector("#response_text").innerHTML = error;
         });
 
+    return false;
+}
+
+function newExample() {
+    scrollToElementWithOffset('#example-form');
     return false;
 }
 

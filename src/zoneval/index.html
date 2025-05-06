@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API de preço médio de imóveis por CEP</title>
+    <title>{{var:header_title}} - API de estatísticas de imóveis por CEP</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +18,12 @@
         <section class="hero">
             <div class="container hero-container">
                 <img src="images/logo.png" alt="zoneval" />
-                <p>API com preço médio e por metro quadrado de imóveis de todo o Brasil através do CEP.
-                    Potencialize suas aplicações com inteligência imobiliária.</p>
+                <p>Potencialize suas aplicações, modelos e análises consultando estatísticas
+                    imobiliárias do CEP de seus clientes, usuários e fornecedores
+                </p>
                 <div class="hero-buttons">
-                    <a href="#pricing" class="btn btn-primary">Ver Preços</a>
-                    <a href="docs.html" class="btn btn-secondary">Ler Documentação</a>
+                    <a href="#pricing" class="btn btn-primary">ver planos</a>
+                    <a href="docs.html" class="btn btn-secondary">ler documentação</a>
                 </div>
             </div>
         </section>
@@ -68,18 +69,21 @@
                     <div class="feature-card">
                         <!-- Placeholder for Icon -->
                         <h3>Dados Abrangentes</h3>
-                        <p>Cobertura nacional, fornecendo valor médio e mediano e valor por metro quadrado e por quarto para CEPs em todo o
+                        <p>Cobertura nacional, fornecendo valor médio e mediano e valor por metro quadrado e por quarto
+                            para CEPs em todo o
                             Brasil.</p>
                     </div>
                     <div class="feature-card">
                         <!-- Placeholder for Icon -->
                         <h3>Fallbacks inteligentes</h3>
-                        <p>Agregação de bairro, cidade e estado do CEP buscado, ajudando a tratar casos sem imóveis a venda no CEP</p>
+                        <p>Agregação de bairro, cidade e estado do CEP buscado, ajudando a tratar casos sem imóveis a
+                            venda no CEP</p>
                     </div>
                     <div class="feature-card">
                         <!-- Placeholder for Icon -->
                         <h3>Fácil Integração</h3>
-                        <p>API RESTful simples, intuítica e bem documentada para integração rápida em todas linguagens de programação.</p>
+                        <p>API RESTful simples, intuítica e bem documentada para integração rápida em todas linguagens
+                            de programação.</p>
                     </div>
                 </div>
             </div>
@@ -95,7 +99,7 @@
                 <section class="api-section">
 
                     <div class="left-column">
-                        <form class="form" onsubmit="return executeExample()">
+                        <form class="form" id="example-form" onsubmit="return executeExample()">
                             <p>Selecione abaixo diferentes CEPs e verifique o resultado da API</p>
                             <label for="cep">CEP a ser consultado:</label>
                             <select name="cep" id="cep_input" onchange="return executeExample()">
@@ -105,7 +109,7 @@
                                 <option value="94490340">94490-340 - Com nenhum dado</option>
                             </select>
                             <p>Caso tenha dúvidas sobre o que significado de cada campo retornado pela API,
-                                consulte nossa documentação.</p>
+                                consulte nossa <a href="{{var:zoneval_path}}docs.html">documentação</a></p>
                         </form>
                         <div class="block">
                             <h2>Requisição cURL</h2>
@@ -116,6 +120,8 @@
                         </div>
                     </div>
                     <div class="block block-response">
+                        <a id="example-again" onclick="return newExample()" class="btn btn-secondary">Testar outro
+                            exemplo</a>
                         <h2>Resposta JSON</h2>
                         <pre id="response_text">
 {
@@ -200,7 +206,7 @@
                     <span class="tag">Planos e Preços</span>
                     <h2>Escolha o plano ideal para você</h2>
                     <p>Planos flexíveis que se adaptam às suas necessidades, desde testes iniciais até aplicações de
-                        larga escala. Comece gratuitamente.</p>
+                        larga escala. Você só paga o que usa!</p>
                 </div>
                 <table class="pricing-table">
                     <thead>
@@ -251,7 +257,8 @@
                     <h2>Entre em Contato</h2>
                     <p>Deseja contratar, tem alguma dúvida ou precisa de um plano personalizado?</p>
                 </div>
-                <form action="https://formsubmit.co/fale.conosco@timotta.com" method="post" class="contact-form">
+                <form action="https://formsubmit.co/cd3988e285e7c957ad284f3dfb3ff028" method="post"
+                    class="contact-form">
                     <input type="hidden" id="subject" name="subject" value="Formulário de contato da PMICEP API">
                     <div class="form-group">
                         <label for="name">Nome:</label>

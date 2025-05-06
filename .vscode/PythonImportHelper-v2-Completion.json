@@ -1,0 +1,65 @@
+[
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "make_includes",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def make_includes(data):\n    spl = data.split(\"{{include:\")\n    while len(spl) > 1:\n        file = spl[1].split(\"}}\")[0]\n        content = open(file, \"r\").read()\n        to_include = f\"\"\"<!-- start {file} -->{content}<!-- end {file} -->\"\"\"\n        data = data.replace(\"{{include:%s}}\" % file, to_include)\n        print(f\"included: {file}\")\n        spl = data.split(\"{{include:\")\n    return data",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "replace_vars",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def replace_vars(data):\n    for k, v in VARS.items():\n        data = data.replace(\"{{var:%s}}\" % k, v)\n    return data\ndef do_file(path):\n    if path.endswith(\".html\") or path.endswith(\".css\") or path.endswith(\".js\"):\n        print(f\"doing {path}\")\n        data = open(path, \"r\").read()\n        data = make_includes(data)\n        data = replace_vars(data)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "do_file",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def do_file(path):\n    if path.endswith(\".html\") or path.endswith(\".css\") or path.endswith(\".js\"):\n        print(f\"doing {path}\")\n        data = open(path, \"r\").read()\n        data = make_includes(data)\n        data = replace_vars(data)\n        with open(path, \"w\") as f:\n            f.write(data)\ndef do_dir(dir_name):\n    print(f\"doing {dir_name}\")",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "do_dir",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def do_dir(dir_name):\n    print(f\"doing {dir_name}\")\n    for file in os.listdir(dir_name):\n        path = f\"{dir_name}/{file}\"\n        if os.path.isdir(path):\n            do_dir(path)\n        elif os.path.isfile(path):\n            do_file(path)\nif __name__ == \"__main__\":\n    shutil.copytree(\"src\", \"docs\", dirs_exist_ok=True)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "VARS",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "VARS = {\"zoneval_path\": \"/zoneval/\", \"header_title\": \"zoneval\"}\ndef make_includes(data):\n    spl = data.split(\"{{include:\")\n    while len(spl) > 1:\n        file = spl[1].split(\"}}\")[0]\n        content = open(file, \"r\").read()\n        to_include = f\"\"\"<!-- start {file} -->{content}<!-- end {file} -->\"\"\"\n        data = data.replace(\"{{include:%s}}\" % file, to_include)\n        print(f\"included: {file}\")\n        spl = data.split(\"{{include:\")",
+        "detail": "build",
+        "documentation": {}
+    }
+]

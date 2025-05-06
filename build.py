@@ -1,7 +1,7 @@
 import shutil
 import os
 
-VARS = {"zoneval_path": "/zoneval/"}
+VARS = {"zoneval_path": "/zoneval/", "header_title": "zoneval"}
 
 
 def make_includes(data):

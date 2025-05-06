@@ -29,8 +29,14 @@ a:hover {
 }
 
 img {
-    max-width: 100%;
+    max-width: 800px;
     height: auto;
+}
+
+@media (max-width: 815px) {
+    img {
+        max-width: 100%;
+    }
 }
 
 .btn {
@@ -147,7 +153,7 @@ img {
 /* Hero Section */
 .hero {
     background: linear-gradient(to right, #e0f2fe, #cbe7ff); /* Light blue gradient */
-    padding: 80px 0 68px;
+    padding: 52px 0 68px;
     text-align: center;
 }
 
@@ -249,7 +255,7 @@ img {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 851px) {
     .nav {
         display: none; /* Hide desktop nav on mobile */
         /* Add styles for mobile menu display later if needed */
@@ -465,7 +471,7 @@ img {
 }
 
 /* Mobile Nav Specific Styles */
-@media (max-width: 768px) {
+@media (max-width: 851px) {
     .nav {
         display: none; /* Hidden by default */
         position: absolute;
@@ -611,10 +617,24 @@ img {
     overflow-x: auto;
   }
 
-  .block-response {
+.block-response {
     width: 100%;
     max-width: 500px;
-  }
+    position: relative;
+}
+
+#example-again {
+    display: none;
+}
+
+@media (max-width: 1155px) {
+    #example-again {
+        display: block;
+        position: absolute;
+        right: 18px;
+    }
+}
+
 
   .block h2 {
     font-size: 1.2rem;
@@ -739,3 +759,4 @@ img {
     background-color: #f2f2f2;
     font-weight: 600;
 }
+
