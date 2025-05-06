@@ -46,11 +46,11 @@
             <h2>Requisição</h2>
             <p>As requisições seguem o seguinte formato</p>
             <p>Inclua os seguintes headers em todas requisições:</p>
-            <pre><code>curl https://pmicep.timotta.com/zipcodes/$CEP_BUSCADO/stats
+            <pre><code>curl https://api.zoneval.timotta.com/zipcodes/$CEP_BUSCADO/stats \
                 --header 'x-api-key: $API_KEY' \
                 --header 'x-api-secret: $API_SECRET'</code></pre>
             <p>Exemplo:</p>
-            <pre><code>curl https://pmicep.timotta.com/zipcodes/05409011/stats
+            <pre><code>curl https://api.zoneval.timotta.com/zipcodes/05409011/stats \
                 --header 'x-api-key: rsp-key-f104e7f027a911f085d92b946cc40296' \
                 --header 'x-api-secret: rsp-secret-f8b6889627a911f08acb9f00a62cb4b4'</code></pre>
         </section>

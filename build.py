@@ -1,7 +1,11 @@
 import shutil
 import os
 
-VARS = {"zoneval_path": "/zoneval/", "header_title": "zoneval"}
+VARS = {
+    "zoneval_path": "/zoneval/",
+    "header_title": "zoneval",
+    "zoneval_api_host": "https://api.zoneval.timotta.com",
+}
 
 
 def make_includes(data):

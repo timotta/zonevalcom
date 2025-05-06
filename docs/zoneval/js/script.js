@@ -44,8 +44,8 @@ function scrollToElementWithOffset(selector, offset = 88) {
 }
 
 
-var TEMPLATE = "curl https://pmicep.timotta.com/zipcodes/$ZIPCODE/stats\n" +
-    "    --header 'x-api-key: rsp-key-...'\n" +
+var TEMPLATE = "curl https://api.zoneval.timotta.com/zipcodes/$ZIPCODE/stats \\ \n" +
+    "    --header 'x-api-key: rsp-key-...' \\ \n" +
     "    --header 'x-api-secret: rsp-secret-...'\n";
 
 function executeExample() {
@@ -56,7 +56,7 @@ function executeExample() {
     document.querySelector("#request_text").innerHTML = TEMPLATE.replace("$ZIPCODE", cep);
     document.querySelector("#response_text").innerHTML = "Carregando..."
 
-    fetch('https://pmicep.timotta.com/zipcodes/' + cep + '/stats', {
+    fetch('https://api.zoneval.timotta.com/zipcodes/' + cep + '/stats', {
         method: 'GET',
         headers: {
             'x-api-key': 'rsp-key-f104e7f027a911f085d92b946cc40296',
