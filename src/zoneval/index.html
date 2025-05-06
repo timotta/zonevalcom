@@ -12,45 +12,14 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <a href="/precos-imoveis-cep-api/" class="logo">
-                <!-- Placeholder for Logo Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="logo-icon">
-                    <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
-                    <path d="M9 22v-4h6v4" />
-                    <path d="M8 6h.01" />
-                    <path d="M16 6h.01" />
-                    <path d="M12 6h.01" />
-                    <path d="M12 10h.01" />
-                    <path d="M12 14h.01" />
-                    <path d="M16 10h.01" />
-                    <path d="M16 14h.01" />
-                    <path d="M8 10h.01" />
-                    <path d="M8 14h.01" />
-                </svg>
-                <span>PMICEP API</span>
-            </a>
-            <nav class="nav">
-                <a href="/precos-imoveis-cep-api/#casosdeuso">Casos de uso</a>
-                <a href="/precos-imoveis-cep-api/#caracteristicas">Características</a>
-                <a href="/precos-imoveis-cep-api/#exemplo">Exemplo</a>
-                <a href="/precos-imoveis-cep-api/docs.html">Documentação</a>
-                <a href="/precos-imoveis-cep-api/#pricing">Preços</a>
-                <a href="/precos-imoveis-cep-api/#contact">Contato</a>
-            </nav>
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
-        </div>
-    </header>
+    {{include:docs/zoneval/_header.html}}
 
     <main>
         <section class="hero">
             <div class="container hero-container">
-                <h1>API de preço médio de imóveis por CEP</h1>
-                <p>Acesse dados precisos sobre valor médio e valor por metro quadrado de imóveis em todo o Brasil,
-                    utilizando apenas o CEP. Potencialize suas aplicações com inteligência imobiliária.</p>
+                <img src="images/logo.png" alt="zoneval" />
+                <p>API com preço médio e por metro quadrado de imóveis de todo o Brasil através do CEP.
+                    Potencialize suas aplicações com inteligência imobiliária.</p>
                 <div class="hero-buttons">
                     <a href="#pricing" class="btn btn-primary">Ver Preços</a>
                     <a href="docs.html" class="btn btn-secondary">Ler Documentação</a>

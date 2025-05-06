@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de preço médio de imóveis por CEP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start docs/zoneval/_header.html --><header class="header">
+    <div class="container header-container">
+        <a href="/zoneval/" class="logo">
+            <!-- Placeholder for Logo Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="logo-icon">
+                <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+                <path d="M9 22v-4h6v4" />
+                <path d="M8 6h.01" />
+                <path d="M16 6h.01" />
+                <path d="M12 6h.01" />
+                <path d="M12 10h.01" />
+                <path d="M12 14h.01" />
+                <path d="M16 10h.01" />
+                <path d="M16 14h.01" />
+                <path d="M8 10h.01" />
+                <path d="M8 14h.01" />
+            </svg>
+            <span>zoneval</span>
+        </a>
+        <nav class="nav">
+            <a href="/zoneval/#casosdeuso">Casos de uso</a>
+            <a href="/zoneval/#caracteristicas">Características</a>
+            <a href="/zoneval/#exemplo">Exemplo</a>
+            <a href="/zoneval/docs.html">Documentação</a>
+            <a href="/zoneval/#pricing">Preços</a>
+            <a href="/zoneval/#contact">Contato</a>
+        </nav>
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+</header><!-- end docs/zoneval/_header.html -->
+
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <img src="images/logo.png" alt="zoneval" />
+                <p>API com preço médio e por metro quadrado de imóveis de todo o Brasil através do CEP.
+                    Potencialize suas aplicações com inteligência imobiliária.</p>
+                <div class="hero-buttons">
+                    <a href="#pricing" class="btn btn-primary">Ver Preços</a>
+                    <a href="docs.html" class="btn btn-secondary">Ler Documentação</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="casosdeuso" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">Casos de uso</span>
+                    <h2>Onde e quando usar?</h2>
+                    <p>Nossa API ajuda seu negócio a tomar decisões mais inteligentes com base no CEP cadastrado pelo
+                        seu cliente.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Segmentação Precisa</h3>
+                        <p>Segmente seu público para campanhas publicitárias com base no perfil imobiliário da região do
+                            CEP.</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Modelos de Recomendação</h3>
+                        <p>Enriqueça seus modelos de recomendação com dados de valor imobiliário.</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Prevenção à Fraude</h3>
+                        <p>Utilize o valor do imóvel como um fator adicional na análise de risco e prevenção a fraudes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="caracteristicas" class="features features-gray">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">Características</span>
+                    <h2>Simplicidade e abrangência</h2>
+                    <p>Nossa API fornece dados imobiliários atualizados e confiáveis para diversas aplicações.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Dados Abrangentes</h3>
+                        <p>Cobertura nacional, fornecendo valor médio e mediano e valor por metro quadrado e por quarto para CEPs em todo o
+                            Brasil.</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Fallbacks inteligentes</h3>
+                        <p>Agregação de bairro, cidade e estado do CEP buscado, ajudando a tratar casos sem imóveis a venda no CEP</p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- Placeholder for Icon -->
+                        <h3>Fácil Integração</h3>
+                        <p>API RESTful simples, intuítica e bem documentada para integração rápida em todas linguagens de programação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="exemplo" class="example">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">Exemplo</span>
+                    <h2>Exemplo de uso da API</h2>
+                </div>
+                <section class="api-section">
+
+                    <div class="left-column">
+                        <form class="form" onsubmit="return executeExample()">
+                            <p>Selecione abaixo diferentes CEPs e verifique o resultado da API</p>
+                            <label for="cep">CEP a ser consultado:</label>
+                            <select name="cep" id="cep_input" onchange="return executeExample()">
+                                <option value="05409011">05409-011 - Com muitíssimos dados</option>
+                                <option value="22720011">22720-011 - Com muitos dados</option>
+                                <option value="13481008">13481-008 - Com poucos dados</option>
+                                <option value="94490340">94490-340 - Com nenhum dado</option>
+                            </select>
+                            <p>Caso tenha dúvidas sobre o que significado de cada campo retornado pela API,
+                                consulte nossa documentação.</p>
+                        </form>
+                        <div class="block">
+                            <h2>Requisição cURL</h2>
+                            <pre id="request_text">curl http://pmicep.timotta.com/zipcodes/05409011/stats
+    --header 'x-api-key: rsp-key-...' \
+    --header 'x-api-secret: rsp-secret-...'
+</pre>
+                        </div>
+                    </div>
+                    <div class="block block-response">
+                        <h2>Resposta JSON</h2>
+                        <pre id="response_text">
+{
+    "by_zipcode": {
+        "global": {
+            "average": 1356516.75,
+            "median": 1279970.0,
+            "support": 500
+        },
+        "per_m2": {
+            "average": 16720.134765625,
+            "median": 15855.76953125,
+            "support": 499
+        },
+        "per_room": {
+            "average": 689286.9375,
+            "median": 549666.6875,
+            "support": 500
+        }
+    },
+    "by_neighbourhood": {
+        "global": {
+            "average": 1901228.0,
+            "median": 1350000.0,
+            "support": 30002
+        },
+        "per_m2": {
+            "average": 17830.412109375,
+            "median": 17543.859375,
+            "support": 29978
+        },
+        "per_room": {
+            "average": 873248.25,
+            "median": 680000.0,
+            "support": 30002
+        }
+    },
+    "by_city": {
+        "global": {
+            "average": 1799876.875,
+            "median": 955000.0,
+            "support": 1220210
+        },
+        "per_m2": {
+            "average": 5085.2685546875,
+            "median": 9624.0859375,
+            "support": 1217170
+        },
+        "per_room": {
+            "average": 680054.9375,
+            "median": 416666.65625,
+            "support": 1220210
+        }
+    },
+    "by_uf": {
+        "global": {
+            "average": 1494168.5,
+            "median": 793500.0,
+            "support": 2737457
+        },
+        "per_m2": {
+            "average": 1737.783203125,
+            "median": 7064.51611328125,
+            "support": 2730922
+        },
+        "per_room": {
+            "average": 545531.8125,
+            "median": 318000.0,
+            "support": 2737457
+        }
+    }
+}
+                        </pre>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <span class="tag">Planos e Preços</span>
+                    <h2>Escolha o plano ideal para você</h2>
+                    <p>Planos flexíveis que se adaptam às suas necessidades, desde testes iniciais até aplicações de
+                        larga escala. Comece gratuitamente.</p>
+                </div>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th class="rate-limit-col-title">Limite de Requisições por minuto</th>
+                            <th>Preço por Requisição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rate-limit-col">Até 6 RPM</td>
+                            <td class="price-col">R$ 0,0005</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Até 30 RPM</td>
+                            <td class="price-col">R$ 0,0052</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Até 120 RPM</td>
+                            <td class="price-col">R$ 0,0123</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Até 1200 RPM</td>
+                            <td class="price-col">R$ 0,0182</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Até 6000 RPM</td>
+                            <td class="price-col">R$ 0,0256</td>
+                        </tr>
+                        <tr>
+                            <td class="rate-limit-col">Acima de 6000 RPM</td>
+                            <td class="price-col">Sob consulta</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="notes-row">
+                            <td colspan="2">Planos com limites maiores, SLA dedicado e suporte premium disponíveis. <a
+                                    href="#contact">Entre em contato</a> para uma cotação personalizada.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Entre em Contato</h2>
+                    <p>Deseja contratar, tem alguma dúvida ou precisa de um plano personalizado?</p>
+                </div>
+                <form action="https://formsubmit.co/fale.conosco@timotta.com" method="post" class="contact-form">
+                    <input type="hidden" id="subject" name="subject" value="Formulário de contato da PMICEP API">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p align="center">&copy; 2025 timotta. Todos os direitos reservados.</p>
+            <!--
+            <nav class="footer-nav">
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+            </nav>
+            -->
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script> <!-- Optional: for mobile nav toggle -->
+</body>
+
+</html>
