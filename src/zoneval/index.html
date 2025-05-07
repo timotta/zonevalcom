@@ -9,6 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Twitter conversion tracking base code -->
+    <script>
+        !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+        },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+        a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+        twq('config','pp2ku');
+    </script>
+    <!-- End Twitter conversion tracking base code -->
 </head>
 
 <body>
@@ -258,7 +266,7 @@
                     <p>Deseja contratar, tem alguma dúvida ou precisa de um plano personalizado?</p>
                 </div>
                 <form action="https://formsubmit.co/cd3988e285e7c957ad284f3dfb3ff028" method="post"
-                    class="contact-form">
+                    class="contact-form" onsubmit="return contactSubmit()">
                     <input type="hidden" id="subject" name="subject" value="Formulário de contato da PMICEP API">
                     <div class="form-group">
                         <label for="name">Nome:</label>

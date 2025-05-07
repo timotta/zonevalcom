@@ -78,4 +78,12 @@ function newExample() {
     return false;
 }
 
-// Add styles in style.css for .nav-visible if implementing the toggle fully
+
+function contactSubmit() {
+    try {
+        twq('event', 'tw-pp2ku-pp2kw', {});
+    } catch(e) {
+        console.log("failed twitter conversion");
+    }
+    return true;
+}
