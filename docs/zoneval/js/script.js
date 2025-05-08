@@ -80,10 +80,20 @@ function newExample() {
 
 
 function contactSubmit() {
+    var callback = function () {
+        console.log("CALLBACK");
+        document.querySelector("#contactform").submit();
+    };
     try {
-        twq('event', 'tw-pp2ku-pp2kw', {});
-    } catch(e) {
-        console.log("failed twitter conversion");
+        gtag('event', 'conversion', {
+            'send_to': 'AW-1023585344/6nGwCJGvuMQaEMDYiugD',
+            'value': 0.5,
+            'currency': 'BRL',
+            'event_callback': callback
+        });
+    } catch (e) {
+        console.log("ERROR", e);
+        callback()
     }
-    return true;
+    return false;
 }
