@@ -197,6 +197,12 @@ img {
     transition: transform 0.3s ease;
 }
 
+/*
+#casosdeuso .feature-card {
+    background-color: #eef7ff85;
+}
+*/
+
 .feature-card:hover {
     transform: translateY(-5px);
 }
