@@ -85,6 +85,7 @@ function contactSubmit() {
         document.querySelector("#contactform").submit();
     };
     try {
+        fbq('track', 'Contact');
         gtag('event', 'conversion', {
             'send_to': 'AW-1023585344/6nGwCJGvuMQaEMDYiugD',
             'value': 0.5,
