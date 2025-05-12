@@ -2,9 +2,9 @@ import shutil
 import os
 
 VARS = {
-    "zoneval_path": "/zoneval/",
+    "zoneval_path": "/",
     "header_title": "zoneval",
-    "zoneval_api_host": "https://api.zoneval.timotta.com",
+    "zoneval_api_host": "https://api.zoneval.com",
 }
 
 

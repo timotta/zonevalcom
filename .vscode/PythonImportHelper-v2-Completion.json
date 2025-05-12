@@ -58,7 +58,7 @@
         "kind": 5,
         "importPath": "build",
         "description": "build",
-        "peekOfCode": "VARS = {\n    \"zoneval_path\": \"/zoneval/\",\n    \"header_title\": \"zoneval\",\n    \"zoneval_api_host\": \"https://api.zoneval.timotta.com\",\n}\ndef make_includes(data):\n    spl = data.split(\"{{include:\")\n    while len(spl) > 1:\n        file = spl[1].split(\"}}\")[0]\n        content = open(file, \"r\").read()",
+        "peekOfCode": "VARS = {\n    \"zoneval_path\": \"/\",\n    \"header_title\": \"zoneval\",\n    \"zoneval_api_host\": \"https://api.zoneval.com\",\n}\ndef make_includes(data):\n    spl = data.split(\"{{include:\")\n    while len(spl) > 1:\n        file = spl[1].split(\"}}\")[0]\n        content = open(file, \"r\").read()",
         "detail": "build",
         "documentation": {}
     }

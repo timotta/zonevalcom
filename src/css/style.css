@@ -29,8 +29,14 @@ a:hover {
 }
 
 img {
-    max-width: 100%;
+    max-width: 800px;
     height: auto;
+}
+
+@media (max-width: 815px) {
+    img {
+        max-width: 100%;
+    }
 }
 
 .btn {
@@ -147,7 +153,7 @@ img {
 /* Hero Section */
 .hero {
     background: linear-gradient(to right, #e0f2fe, #cbe7ff); /* Light blue gradient */
-    padding: 80px 0;
+    padding: 52px 0 68px;
     text-align: center;
 }
 
@@ -165,7 +171,7 @@ img {
 }
 
 .hero-buttons .btn {
-    margin: 0 10px;
+    margin: 0 10px 12px;
     padding: 12px 25px;
     font-size: 1.1em;
 }
@@ -191,6 +197,12 @@ img {
     transition: transform 0.3s ease;
 }
 
+/*
+#casosdeuso .feature-card {
+    background-color: #eef7ff85;
+}
+*/
+
 .feature-card:hover {
     transform: translateY(-5px);
 }
@@ -203,6 +215,10 @@ img {
 .feature-card p {
     font-size: 0.95em;
     color: #555;
+}
+
+.features-gray {
+    background-color: #f0f4f8;
 }
 
 /* Placeholder Sections */
@@ -245,7 +261,7 @@ img {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 851px) {
     .nav {
         display: none; /* Hide desktop nav on mobile */
         /* Add styles for mobile menu display later if needed */
@@ -461,7 +477,7 @@ img {
 }
 
 /* Mobile Nav Specific Styles */
-@media (max-width: 768px) {
+@media (max-width: 851px) {
     .nav {
         display: none; /* Hidden by default */
         position: absolute;
@@ -504,9 +520,10 @@ img {
 
 .pricing-table th, .pricing-table td {
     padding: 15px;
-    text-align: center;
     border-bottom: 1px solid #e0e0e0;
+    text-align: center;
 }
+
 
 .pricing-table th {
     background-color: #f0f4f8; /* Light gray-blue */
@@ -517,6 +534,7 @@ img {
 
 .pricing-table td {
     color: #333;
+
 }
 
 .pricing-table tbody tr:last-child td {
@@ -534,7 +552,7 @@ img {
 
 .pricing-table .price-col {
     font-weight: 700;
-    color: #007bff;
+    color: #606093;
 }
 
 .pricing-table .notes-row td {
@@ -544,5 +562,207 @@ img {
     padding-top: 20px;
     border-top: 2px solid #e0e0e0;
     background-color: #f8f9fa;
+}
+
+.pricing-table .rate-limit-col-title {
+    text-align: left;
+}
+
+.example {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+/* example section on index */
+.api-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 546px;
+    width: 100%;
+  }
+
+  .form {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+  .form select {
+    width: 100%;
+    padding: 0.5rem;
+    font-family: monospace;
+    border: 1px solid #1e1e1e;
+    border-radius: 4px;
+    background-color: #e0f2fe;
+  }
+
+
+  .block {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+  }
+
+.block-response {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+#example-again {
+    display: none;
+}
+
+@media (max-width: 1155px) {
+    #example-again {
+        display: block;
+        position: absolute;
+        right: 18px;
+    }
+}
+
+
+  .block h2 {
+    font-size: 1.2rem;
+    color: #61dafb;
+    margin-bottom: 1rem;
+  }
+
+  pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+
+/* Additional styles specific to docs page */
+.docs-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.docs-section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.docs-section:last-child {
+    border-bottom: none;
+}
+
+.docs-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #1a2b48;
+}
+
+.docs-section h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #1a2b48;
+}
+
+.docs-section h4 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.docs-section p,
+.docs-section li {
+    color: #445;
+    margin-bottom: 15px;
+}
+
+.docs-section ul {
+    padding-left: 20px;
+}
+
+.docs-section pre {
+    background-color: #2d2d2d;
+    /* Dark background for code */
+    color: #f8f8f2;
+    /* Light text */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.docs-section code {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.code-inline {
+    background-color: #eef1f3;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.http-method {
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.get {
+    background-color: #e6f7ec;
+    /* Light green */
+    color: #0b8744;
+    /* Dark green */
+}
+
+.endpoint-path {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #f0f4f8;
+    padding: 10px;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.param-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.param-table th,
+.param-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.param-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
 }
 
